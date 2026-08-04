@@ -1,0 +1,5 @@
+torch
+monai[all]
+pydicom
+matplotlib
+numpy

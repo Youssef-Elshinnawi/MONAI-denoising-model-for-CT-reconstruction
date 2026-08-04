@@ -200,4 +200,3 @@ make build/ct_compare  # real-CT-slice comparison driver
 cd build && ./ct_compare
 cd ../../scripts && python3 compare_methods.py
 ```
-# MONAI-denoising-model-for-CT-reconstruction

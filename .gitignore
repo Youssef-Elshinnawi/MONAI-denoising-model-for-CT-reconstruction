@@ -1,0 +1,10 @@
+# C++ build artifacts
+comparison/cpp/build/*
+!comparison/cpp/build/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
