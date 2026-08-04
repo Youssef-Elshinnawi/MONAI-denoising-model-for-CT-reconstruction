@@ -1,5 +1,7 @@
-torch
-monai[all]
-pydicom
-matplotlib
-numpy
+# Versions verified in the local dev/comparison environment. Training itself
+# ran on Colab, whose exact package versions weren't logged at training time.
+torch==2.13.0
+monai[all]==1.6.0
+pydicom==3.0.2
+matplotlib==3.10.6
+numpy==2.3.5
