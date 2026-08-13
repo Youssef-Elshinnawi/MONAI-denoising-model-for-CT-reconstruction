@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CT Denoising Processing Unit Configuration",
+  "type": "object",
+  "properties": {
+    "checkpoint_path": {
+      "type": "string",
+      "enum": ["/app/checkpoints/best_model_run1_20ep.pt", "/app/checkpoints/best_model_run2_100ep.pt" ],
+      "description": "Which model is being used, 20 epochs or 100 epochs, default is 100 epochs.",
+      "default": "/app/checkpoints/best_model_run2_100ep.pt"
+    },
+    "batch_size": {
+      "type": "integer",
+      "description": "GPU batch size, default is 8.",
+      "default": 8,
+      "minimum": 1,
+      "maximum": 32
+    }
+  }
+}

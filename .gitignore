@@ -8,3 +8,14 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# Local test DICOM data (not committed even though the source dataset is
+# public/CC-BY -- no reason to carry patient-series files in a public repo)
+frontier-app/test/sample_input/
+frontier-app/test/**/*.dcm
+
+# Generated local test run artifacts
+frontier-app/test/sample_output/
+frontier-app/test/sample_log/
+frontier-app/test/docker_output/
+frontier-app/test/docker_log/

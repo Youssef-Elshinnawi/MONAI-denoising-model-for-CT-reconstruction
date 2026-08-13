@@ -1,0 +1,4 @@
+{
+  "checkpoint_path": "/app/checkpoints/best_model_run2_100ep.pt",
+  "batch_size": 8
+}

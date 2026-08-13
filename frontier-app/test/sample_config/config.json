@@ -1,0 +1,4 @@
+{
+  "checkpoint_path": "/Users/youssef/MONAI-denoising/checkpoints/best_model_run1_20ep.pt",
+  "batch_size": 4
+}

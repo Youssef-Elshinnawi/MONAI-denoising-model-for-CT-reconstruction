@@ -1,0 +1,9 @@
+# Minimal, deployment-only dependencies -- no matplotlib (training/comparison
+# visualization only, never used at inference time), and no `[all]` on monai
+# (pulls in mlflow/torchio/etc. that entrypoint.py/inference.py never touch --
+# we only use monai.networks.nets.UNet and monai.transforms.ScaleIntensityRange,
+# both in MONAI's core package). torch is installed separately in the
+# Dockerfile via PyTorch's CPU-only wheel index, not listed here.
+monai==1.6.0
+pydicom==3.0.2
+numpy==2.3.5

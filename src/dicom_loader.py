@@ -32,8 +32,12 @@ def load_dicom_series_as_hu(series_dir: str) -> np.ndarray:
 
     slices = []
     for ds in datasets:
+        # pydicom's RescaleSlope/Intercept are DSfloat (a float subclass);
+        # multiplying by a plain Python float upcasts float32 -> float64 per
+        # numpy's type promotion rules, so the explicit cast at the end is
+        # load-bearing, not redundant with the one above.
         hu = ds.pixel_array.astype(np.float32) * ds.RescaleSlope + ds.RescaleIntercept
-        slices.append(hu)
+        slices.append(hu.astype(np.float32))
 
     return np.stack(slices, axis=0)
 

@@ -1,0 +1,34 @@
+{
+  "_comment": "Data Selection Rules for the CT denoising processing unit. Designed against Frontier's documented rule grammar (docs.frontier.api.teamplay.siemens-healthineers.com/docs/Guidelines/data-selection-rules) -- not registered on the real portal (no institutional access), but structured to match it exactly.",
+
+  "StudySelectorSequence": [
+    {
+      "StudySelectorOperation": {
+        "Criteria": "LATEST",
+        "Mandatory": true
+      }
+    }
+  ],
+
+  "SeriesSelectorSequence": [
+    {
+      "SeriesSelectorOperation": {
+        "_note": "SeriesDescription match behavior (exact vs. substring, case sensitivity) isn't specified in the publicly available docs -- flagged, not assumed.",
+        "Criteria": "LATEST",
+        "SeriesDescription": "Chest",
+        "MinimumNumberOfImagesInSeries": "20",
+        "InvalidOnMissingSlices": true,
+        "ExtractOnlyMetadata": false
+      },
+      "SelectorOperationsSequence": [
+        {
+          "SelectorAttribute": "(0008,0060)",
+          "SelectorAttributeVR": "CS",
+          "SelectbyOperator": "EQUALS",
+          "SelectorCSValue": "CT"
+        }
+      ],
+      "SelectorOperator": "AND"
+    }
+  ]
+}
